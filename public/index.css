@@ -15,4 +15,7 @@ body {
   display: flex;
   align-items: center;
 }
-
+img{
+  height: auto;
+  width: 25%;
+}

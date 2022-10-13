@@ -1,10 +1,12 @@
 import React from "react";
-import {Navbar} from './'
+import {Navbar, Puppylist} from './'
+
 
 const Main = () => {
   return (
     <div id="main">
     <Navbar/>
+    <Puppylist/>
   </div>
   );
 };
