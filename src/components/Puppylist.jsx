@@ -1,9 +1,30 @@
 import React from "react";
+import { Details } from "./";
 
 const Puppylist = (props) => {
-  const puppyData = props.puppyData
-  console.log (puppyData)
-  return <div>I am puppylist component</div>;
+  const MyPuppies = props.puppyData;
+  return (
+    <div className="PuppyBox">
+      {MyPuppies.length ? (
+        MyPuppies.map((puppy) => {
+          return (
+            <div key={`player-${puppy.id}`} className="puppy">
+              <div>{puppy.name}</div>
+              <div>{puppy.id}</div>
+              {/* <div>{puppy.breed}</div>
+                    <div>{puppy.status}</div> */}
+              <img src={puppy.imageUrl} />
+              <Details />
+              {/* <button id="detailButton">See Details</button> */}
+              <button id="deleteButton">Delete From Roster</button>
+            </div>
+          );
+        })
+      ) : (
+        <div>Loading the Cutest Puppies...</div>
+      )}
+    </div>
+  );
 };
 
 export default Puppylist;

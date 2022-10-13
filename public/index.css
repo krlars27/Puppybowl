@@ -19,3 +19,8 @@ img{
   height: auto;
   width: 25%;
 }
+.puppy{
+  background-color: grey;
+  border: 1px solid black;
+  width: fit-content;
+}

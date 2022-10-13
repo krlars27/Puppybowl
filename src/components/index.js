@@ -1,3 +1,5 @@
 export {default as Main} from './Main'
 export {default as Navbar} from './Navbar'
 export {default as Puppylist} from './Puppylist'
+export {default as Searchbar} from './Searchbar'
+export {default as Details} from './Details'

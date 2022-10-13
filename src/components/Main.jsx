@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, Puppylist } from './';
+import { Navbar, Puppylist, Searchbar, } from './';
 
 
 
@@ -24,6 +24,7 @@ const Main = () => {
   return (
     <div id="main">
     <Navbar/>
+    <Searchbar/>
     <Puppylist puppyData ={puppyData}/>
   </div>
   );
