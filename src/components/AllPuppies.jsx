@@ -1,21 +1,22 @@
 import React from "react";
-import { Details } from "./";
+import DetailsButton from "./DetailsButton";
 
-const Puppylist = (props) => {
+const AllPuppies = (props) => {
   const MyPuppies = props.puppyData;
   return (
-    <div className="PuppyBox">
+    <div className="allPuppies">
       {MyPuppies.length ? (
         MyPuppies.map((puppy) => {
           return (
             <div key={`player-${puppy.id}`} className="puppy">
-              <div>{puppy.name}</div>
-              <div>{puppy.id}</div>
+              <div id="puppyHeader">
+                <span id="puppyName">Name: {puppy.name}</span>
+                <span id="puppyId">ID: {puppy.id}</span>
+              </div>
               {/* <div>{puppy.breed}</div>
                     <div>{puppy.status}</div> */}
               <img src={puppy.imageUrl} />
-              <Details />
-              {/* <button id="detailButton">See Details</button> */}
+              <DetailsButton />
               <button id="deleteButton">Delete From Roster</button>
             </div>
           );
@@ -27,13 +28,4 @@ const Puppylist = (props) => {
   );
 };
 
-export default Puppylist;
-
-//   const response = await fetch(
-//     'https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players'
-//   );
-//   const result = await response.json();
-//   console.log(result);
-//  catch (err) {
-//   console.error(err);
-// }
+export default AllPuppies;
