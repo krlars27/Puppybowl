@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Searchbar = (props) => {
   const MyPuppies = props.puppyData;
 
-  // const [searchInput, setSearchInput] = useState('')
-  // const [filteredInput, setFilteredInput] = useState([]);
+  const [searchInput, setSearchInput] = useState('')
+  const [filteredInput, setFilteredInput] = useState([]);
 
-  // const searchFunc = (input) => {
-  //     setSearchInput(input)
-  //     const filteredData = puppyData.filter((item)=>{
-  //         return Object.values(item).join('').toLowerCase.includes(searchInput.toLowerCase())
-  //     })
-  //     setFilteredInput(filteredData)
-  // }
+  const searchFunc = (input) => {
+      setSearchInput(input)
+      const filteredData = puppyData.filter((item)=>{
+          return Object.values(item).join('').toLowerCase.includes(searchInput.toLowerCase())
+      })
+      setFilteredInput(filteredData)
+  }
 
   return (
     <div className="searchbar">
