@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import DetailsButton from "./DetailsButton";
 
 const AllPuppies = (props) => {
-  const MyPuppies = props.puppyData;
+  const puppyData = props.puppyData;
+
   return (
     <div className="allPuppies">
-      {MyPuppies.length ? (
-        MyPuppies.map((puppy) => {
+      {puppyData.length ? (
+        puppyData.map((puppy) => {
           return (
             <div key={`player-${puppy.id}`} className="puppy">
               <div id="puppyHeader">
@@ -17,7 +18,7 @@ const AllPuppies = (props) => {
                     <div>{puppy.status}</div> */}
               <img src={puppy.imageUrl} />
               <DetailsButton />
-              <button id="deleteButton">Delete From Roster</button>
+              {/* <button id="deleteButton">Delete From Roster</button> */}
             </div>
           );
         })

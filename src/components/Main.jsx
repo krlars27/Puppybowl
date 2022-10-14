@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, AllPuppies, Searchbar, } from './';
+import { Header, Searchbar, AllPuppies } from './';
 
 
 
@@ -23,8 +23,8 @@ const Main = () => {
   
   return (
     <div id="main">
-    <Navbar/>
-    <Searchbar/>
+    <Header/>
+    <Searchbar puppyData ={puppyData}/>
     <AllPuppies puppyData ={puppyData}/>
   </div>
   );
