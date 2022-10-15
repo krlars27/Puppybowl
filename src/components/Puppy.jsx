@@ -3,10 +3,10 @@ import React, { useState } from "react";
 const Puppy = (props) => {
   const puppy = props.puppy;
 
-  const [isShown, setIsShown]=useState(false)
+  const [isShown, setIsShown] = useState(false);
   const handleClick = () => {
-    setIsShown(false)
-  }
+    setIsShown(false);
+  };
 
   return (
     <div className="puppy">
@@ -18,7 +18,14 @@ const Puppy = (props) => {
           <div>Status: {puppy.status}</div>
           <div>Team ID: {puppy.teamId}</div>
           <div>Cohort ID: {puppy.cohortId}</div>
-          <button onClick={handleClick} >See Picture</button>
+          {/* for the button I think we need to do something like this, with a function that activates when the button is clicked. Trying to figure out what to set it as... */}
+          <button
+            onClick={() => {
+              props.setPuppyData;
+            }}
+          >
+            See Picture
+          </button>
         </div>
       ) : (
         <div>Loading Puppy...</div>

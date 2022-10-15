@@ -4,17 +4,13 @@ import Puppy from "./Puppy";
 const AllPuppies = (props) => {
   const puppyData = props.puppyData;
 
-  const [isShown, setIsShown]=useState(false)
+  const [isShown, setIsShown] = useState(false);
   const handleClick = () => {
-    setIsShown(true)
-    function findPuppy(){
-      <Puppy puppy={puppy}/>
+    setIsShown(true);
+    function findPuppy() {
+      <Puppy puppy={Puppy} />;
     }
-  }
-
-
- 
-
+  };
   return (
     <div className="allPuppies">
       {puppyData.length ? (
@@ -26,8 +22,14 @@ const AllPuppies = (props) => {
                 <span id="puppyId">ID: {puppy.id}</span>
               </div>
               <img src={puppy.imageUrl} />
-              <button onClick={handleClick}>See Details</button>
-              
+              <button
+                onClick={
+                  () => props.puppyData(props.puppy.findPuppy)
+                  // ok so the button is registering something, but it's still coming back undefined. But this is probably the right direction?
+                }
+              >
+                See Details
+              </button>
             </div>
           );
         })

@@ -18,7 +18,7 @@ const Searchbar = (props) => {
   return (
     <div className="searchbar">
       <label htmlFor="search">Search: </label>
-      <input type="text" onChange={handleChange} value ={searchInput} />
+      <input type="text" onChange={handleChange} value={searchInput} />
     </div>
   );
 };
