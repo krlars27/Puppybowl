@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Header, Searchbar, AllPuppies } from "./";
+import { Header, Searchbar } from "./";
 
 const Main = () => {
   const [puppyData, setPuppyData] = useState([]);
@@ -15,11 +15,12 @@ const Main = () => {
     getPuppyData();
   }, []);
 
+  console.log(puppies)
+
   return (
     <div id="main">
       <Header />
       <Searchbar puppyData={puppyData} />
-      <AllPuppies puppyData={puppyData} />
     </div>
   );
 };
