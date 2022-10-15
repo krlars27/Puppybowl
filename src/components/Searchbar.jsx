@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import AllPuppies from "./AllPuppies";
+import Puppy from "./Puppy";
+
+
 
 const Searchbar = (props) => {
   //Grabs data from main page
@@ -41,6 +44,14 @@ const Searchbar = (props) => {
       setFilteredPuppies(puppies);
     }
   };
+// I made this variable for the See Details button, and I followed the same logic from the contact list project. I'm very close to getting it to work, I just need to adjust something to make "setPuppyDetails" to be defined.   
+  const puppyDetails = async (puppyId) => {
+    const puppy = puppies.filter((element) => puppyId === element.id);
+    console.log("i ran", puppy[0]);
+  
+    setPuppyDetails(puppy[0]);
+  
+  }
 //Im not sure how to separate the search results from the search input which is why the return is so long.
 //If I try to set puppies, searchInput, and filteredPuppies as a prop (see line 82-86) it's not detected in the AllPuppies.jsx file even if it's not a parent-child relationship.
 //Technically the Searchbar and AllPuppies are only siblings with each other so it should've worked?
@@ -75,7 +86,10 @@ const Searchbar = (props) => {
                     <span id="puppyId">ID: {puppy.id}</span>
                   </div>
                   <img src={puppy.imageUrl} />
+                  {/* I've tried multiple ways of writing the onclick function, still not working lol */}
+                  <button onClick={() => props.setPuppyDetails()}>See Details</button>
                 </div>
+                
               );
             })}
       </div>
