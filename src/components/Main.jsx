@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { Header, SearchBar, SearchResult } from "./";
+import { Header, Search } from "./";
 
 const Main = () => {
-  const [puppyApi, setPuppyAPI] = useState([]);
+  const [allPuppies, setAllPuppies] = useState([]);
   useEffect(() => {
-    async function getPuppyApi() {
+    async function getAllPuppies() {
       const response = await fetch(
         "https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-ET-WEB-FT/players"
       );
       const result = await response.json();
       const puppyArray = result.data.players;
-      setPuppyAPI(puppyArray);
+      setAllPuppies(puppyArray);
     }
-    getPuppyApi();
+
+    getAllPuppies();
   }, []);
 
   return (
     <div id="main">
       <Header />
-      <SearchBar puppyApi={puppyApi} />
+      <Search allPuppies={allPuppies} />
     </div>
   );
 };
