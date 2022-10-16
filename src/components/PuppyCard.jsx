@@ -10,13 +10,15 @@ const PuppyCard = (props) => {
 
   if (displayDetails) {
     return (
-      <div className="puppyDetails">
-        <div>Name: {puppy.name}</div>
-        <div>ID: {puppy.id}</div>
-        <div>Breed: {puppy.breed}</div>
-        <div>Status: {puppy.status}</div>
-        <div>Team ID: {puppy.teamId}</div>
-        <div>Cohort ID: {puppy.cohortId}</div>
+      <div className="puppy">
+        <div className="details">
+          <div>Name: {puppy.name}</div>
+          <div>ID: {puppy.id}</div>
+          <div>Breed: {puppy.breed}</div>
+          <div>Status: {puppy.status}</div>
+          <div>Team ID: {puppy.teamId}</div>
+          <div>Cohort ID: {puppy.cohortId}</div>
+        </div>
         <button onClick={handleClick}>See Image</button>
       </div>
     );

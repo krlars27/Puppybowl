@@ -57,6 +57,7 @@ img {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .puppy {
@@ -86,6 +87,21 @@ img {
   border-radius: 20px;
   border: 3px solid grey;
   margin: 10px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  border: 3px solid grey;
+  height: 456px;
+  width: 306px;
+  margin-top: 25px;
+
+
 }
 
 button {
